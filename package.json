@@ -1,0 +1,26 @@
+{
+  "name": "ts-grpc",
+  "version": "1.0.0",
+  "description": "fast demo for typescipt implementing a grpc communication",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "ts-node ./src/grpc/server.ts",
+    "client": "ts-node ./src/grpc/client.ts",
+    "compile:proto:ts": "./compile-proto-ts.sh",
+    "compile:proto:grpc": "./compile-proto-grpc.sh"
+  },
+  "keywords": [
+    "typescript",
+    "grpc",
+    "proto",
+    "protobuf"
+  ],
+  "author": "Vadim Melenciuc",
+  "license": "ISC",
+  "dependencies": {
+    "@grpc/grpc-js": "^1.8.10",
+    "ts-node": "^10.9.1",
+    "ts-proto": "^1.139.0"
+  }
+}

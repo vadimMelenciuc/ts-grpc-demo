@@ -1,0 +1,36 @@
+syntax = "proto3";
+
+package address;
+
+import "google/protobuf/empty.proto";
+
+message Person {
+
+    enum PhoneType {
+        MOBILE = 0;
+        HOME = 1;
+        WORK = 2;
+    }
+
+    message PhoneNumber {
+        optional string phoneNumber = 1;
+        optional PhoneType phoneType = 2;
+    }
+
+    optional string name = 1;
+
+    repeated PhoneNumber phones = 2;
+}
+
+message AddressBook {
+    repeated Person people = 1;
+}
+
+message AddressRequest {
+    string name = 1;
+}
+
+service Address {
+    rpc GetAllAddresses(google.protobuf.Empty) returns (AddressBook);
+    rpc GetAddress(AddressRequest) returns (Person);
+}
